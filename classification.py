@@ -64,17 +64,9 @@ X_train, X_test, y_train, y_test = train_test_split(features, Y, test_size=0.30,
 #Get the correlation between the features
 x_trainPca,x_testPca,ratio=pp.apply_PCA(X_train,X_test,2)
 
-multiLinearRegModel = linear_model.LinearRegression()
-multiLinearRegModel.fit(X_train, y_train)
-prediction = multiLinearRegModel.predict(X_test)
-print('Mean Square Error', metrics.mean_squared_error(np.asarray(y_test), prediction))
-true_player_value = np.asarray(y_test)[0]
-predicted_player_value = prediction[0]
-print('True rate for the first application  in the test set  is : ' + str(true_player_value))
-print('Predicted rate for the  first application  in the test set  is : ' + str(predicted_player_value))
 
 
-filename = 'multiLinearRegModel.sav'
-pickle.dump(multiLinearRegModel, open(filename, 'wb'))
+#filename = 'ModelName.sav'
+#pickle.dump(ModelName, open(filename, 'wb'))
 
 
